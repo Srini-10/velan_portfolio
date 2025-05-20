@@ -1,0 +1,85 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: "Sora", sans-serif;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* Scrollbar Style  */
+
+/* For WebKit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0316;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7c3aed;
+  border-radius: 5px;
+  border: 2px solid #0a0316;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #7c3aed #0a0316;
+}
+
+/* Optional: Smooth scrolling for the entire document */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hero Component Text Animation */
+@keyframes pulse-slow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.07);
+    opacity: 1;
+  }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 5s ease-in-out infinite;
+}
+
+@keyframes circleWipeUp {
+  0% {
+    clip-path: circle(150% at 50% 100%);
+  }
+  100% {
+    clip-path: circle(0% at 50% 100%);
+  }
+}
+
+.circle-hide {
+  animation: circleWipeUp 1.3s ease-in-out forwards;
+  pointer-events: none;
+}
